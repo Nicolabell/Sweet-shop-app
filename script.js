@@ -99,16 +99,19 @@ let domItemContainer = document.getElementsByTagName('input');
 let countArray = [ ...domItemContainer]; 
 
 
-//Buttons:
+// Buttons:
 
 const preview = document.getElementById('prev');
 const confirm = document.getElementById('confirm');
 const reset = document.getElementById('reset');
 
-//Message area:
+// Message area:
 
 let message = document.getElementById('message');
 
+// Gift order checkbox:
+
+const gift = document.getElementById('gift');
 
 
 
@@ -245,6 +248,7 @@ reset.addEventListener('click', function (event) {
 	weightAllSweets = 0;
 	postage = 0;
 	costAllSweets = 0;
+	gift.checked = false;
 	message.innerHTML = "<p>Use the calculator to add sweets to the order and calculate button to preview the price</p>";
 	
 	for(var i = 0; i < sweets.length; i++) {
