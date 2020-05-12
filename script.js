@@ -10,43 +10,50 @@ let sweets = [
   	type: 'Rhubarb & Custard',
 	gWeight: 2.5,
 	gCost: 0.01,
-	count: 0
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Kola Kubes',
 	gWeight: 2.0,
 	gCost: 0.02,
-	count: 0	
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'	
   },
   {
   	type: 'Pear Drops',
 	gWeight: 1.0,
 	gCost: 0.01,
-	count: 0
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Chocolate Limes',
 	gWeight: 3.0,
 	gCost: 0.03,
-	count: 0
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Aniseed Twists',
   	gWeight: 2.7,
 	gCost: 0.03,
-	count: 0
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Everton Mints',
   	gWeight: 3.0,
 	gCost: 0.04,
-	count: 0
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
 	type: 'Fruit BonBons',
 	gWeight: 2.0,
 	gCost: 0.02,
-	count: 0
+	count: 0,
+	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   }
 
 ];
@@ -75,10 +82,15 @@ function printSweets(array) {
        input.classList.add("usercount");
 
      // Set contents:
-       item.appendChild(document.createTextNode(`${array[i].type}`));  
+       item.appendChild(document.createTextNode(`${array[i].type}`)); 
+       
+     // Create image for item:
+        let img = document.createElement('img'); 
+        img.src = `${array[i].img}`
 
      // Add it to the list:
        item.appendChild(input); //Add input field to list item
+       item.appendChild(img);
        list.appendChild(item); //Add list item to UL
    }
 
