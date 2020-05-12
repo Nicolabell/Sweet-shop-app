@@ -244,9 +244,18 @@ preview.addEventListener('click', function (event) {
 
 
 // When confirm order is clicked - an alert to confirm, etc
+let messageToLoved;
 
 confirm.addEventListener('click', function (event) {
-	alert("You've ordered this stuff!");
+	if(gift.checked == true) {
+	  messageToLoved = prompt("Add a message to your loved one");
+    } else {
+	  alert("You've ordered this stuff!");
+    };
+
+    if(messageToLoved !== null) {
+    alert("You've ordered this stuff!");
+    }
 
 });
 
@@ -263,7 +272,6 @@ reset.addEventListener('click', function (event) {
 	for(var i = 0; i < sweets.length; i++) {
 		countArray[i].value = 0;
 	}
-
 
 });
 
