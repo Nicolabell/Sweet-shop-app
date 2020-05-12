@@ -78,6 +78,13 @@ div {
     overflow: auto;
 }
 
+.sweetImg {
+  width: 50px;
+  height:50px;
+  border-radius: 100px
+}
+
+.sweetie
 
 .alt {
   background-color: #4444;
@@ -112,10 +119,15 @@ input[type=number] {
 /* list style */
 ul {
   list-style-type: none;
-  margin: 5;
-  padding: 5;
+  margin: 0;
+
 }
 
+li {
+  text-align: left;
+  padding-top: 5px;
+
+}
 
 /* Buttons */
 

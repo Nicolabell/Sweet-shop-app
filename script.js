@@ -81,16 +81,17 @@ function printSweets(array) {
        input.setAttribute("value", array[i].count);
        input.classList.add("usercount");
 
-     // Set contents:
-       item.appendChild(document.createTextNode(`${array[i].type}`)); 
-       
-     // Create image for item:
+    // Create image for item:
         let img = document.createElement('img'); 
         img.src = `${array[i].img}`
+        img.classList.add("sweetImg");
 
-     // Add it to the list:
-       item.appendChild(input); //Add input field to list item
+    // Set contents:
        item.appendChild(img);
+       item.appendChild(document.createTextNode(` ${array[i].type} `)); 
+       item.appendChild(input); //Add input field to list item
+      
+    // Add it to the list:
        list.appendChild(item); //Add list item to UL
    }
 
@@ -144,12 +145,10 @@ function allSweetsCost() {
 	 	eachWeight = countArray[i].value * sweets[i].gWeight;
 		eachCost = parseFloat(eachWeight) * sweets[i].gCost;
 		costAllSweets += parseFloat(eachCost);
-
 	}
 	return(costAllSweets);
 	console.log(`The total sweets cost ${costAllSweets}`);
 	console.log(parseFloat(costAllSweets));
-	message.innerText = `The total sweets cost ${costAllSweets}`;
 };
 
 
@@ -163,7 +162,7 @@ function allSweetsWeight() {
 	 }
 		console.log(`The total order weight is ${weightAllSweets}`);
 		if(weightAllSweets < 40) {
-		message.innerHTML +=`<p>The minimum weight per order is 40g. Your order is currently ${weightAllSweets}g; please add more to your order</p>`;
+		message.innerHTML =`<p>Min order weight = 40g. Current weight = ${weightAllSweets}g;  <b>Please add more sweets!</b></p>`;
 
 		return weightAllSweets;
 	}
@@ -173,13 +172,13 @@ function allSweetsWeight() {
 function postageCost(cost) {
   	if(cost > 40 && cost <= 250) { 
 		 postage = 1.50;
-		 message.innerHTML +=`<p>The postage price is £${postage}</p>`;
+		 message.innerHTML =`<p>Sweets: <b>£${costAllSweets}</b>  p&p:  <b>£${postage}</b></p>`;
 		} else if(cost > 250 && cost <= 500){
 		  postage = 2.00;
-          message.innerHTML +=`<p>The postage price is £${postage}</p>`
+          message.innerHTML =`<p>Sweets: <b>£${costAllSweets}</b>  p&p:  <b>£${postage}</b></p>`
       } else if(cost > 500) {
       	postage = 2.50;
-      	message.innerHTML +=`<p>The postage price is £${postage}</p>`
+      	message.innerHTML =`<p>Sweets: <b>£${costAllSweets}</b>  p&p:  <b>£${postage}</b></p>`
       }
       else {
       	return;
@@ -197,8 +196,8 @@ function postageCost(cost) {
 	
 function costALL() {
 	totalCost = parseFloat(postage, 16) + parseFloat(costAllSweets, 10);
-     if(totalCost > 0) {
-     message.innerHTML +=`<p>The cost of order plus post and packaging is £${totalCost}</p>`; //parseflat fixed this
+     if(weightAllSweets > 40) {
+     message.innerHTML +=`<p>Total + p&p: <b>£${totalCost}</p></b>`; //parseflat fixed this
    } else {
  	   return
      }
@@ -279,7 +278,7 @@ reset.addEventListener('click', function (event) {
 	postage = 0;
 	costAllSweets = 0;
 	gift.checked = false;
-	message.innerHTML = "<p>Use the calculator to add sweets to the order and calculate button to preview the price</p>";
+	message.innerHTML = "<p><b>Have another go</b> - add sweets and use preview to calculate!</p>";
 	
 	for(var i = 0; i < sweets.length; i++) {
 		countArray[i].value = 0;
