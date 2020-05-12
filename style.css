@@ -1,0 +1,135 @@
+/* Google fonts */
+ @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Hind+Siliguri:wght@500&display=swapp');
+
+/* Global styling */ 
+
+* {
+  color: #423232;
+  letter-spacing: 0.1px;
+  font-family: 'Hind Siliguri', sans-serif;
+  text-align: center;
+ 
+}
+
+body {
+   background: repeating-linear-gradient(
+  90deg,
+  rgba(245,199,199,0.9),
+  rgba(245,199,199, 0.9) 30px,
+  rgba(252, 252, 222, 0.3) 0px,
+  rgba(252, 252, 222, 0.3) 60px
+),
+url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);
+}
+
+/* Headers */
+
+h1 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+}
+
+/* TEXT */
+
+p {
+  font-family: 'Hind Madurai', sans-serif;
+}
+
+/* Unvisited link */
+a:link {
+  color: #422232;
+}
+
+/* Visited link */
+a:visited {
+  color: #422232; 
+}
+
+/* Mouse over link */
+a:hover {
+  background-color: rgba(252, 252, 222, 0.3);
+  color: #dc143c;
+}
+
+/* Selected link */
+a:active {
+  color: #99bc44;
+}
+
+
+/* div */
+
+div {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50px;
+  background-color: #f5c7c7;
+}
+
+#sweets {
+    height: 190px;
+    overflow: auto;
+}
+
+
+.alt {
+  background-color: #4444;
+}
+
+/* Sweet images */
+
+/* Forms */
+
+input {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* ***Remove up down arrow from input field*** */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* list style */
+ul {
+  list-style-type: none;
+  margin: 5;
+  padding: 5;
+}
+
+
+/* Buttons */
+
+button {
+  color: #fff;
+  background-color: #422232;
+  border-radius: 50px;
+  padding: 8px;
+  border: 5px solid rgba(252, 252, 222, 1); 
+}
+
+button:hover {
+  background-color: rgba(252, 252, 222, 0.3);
+  color: #422232;
+  border: 5px solid;
+}
+
