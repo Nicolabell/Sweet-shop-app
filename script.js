@@ -72,6 +72,7 @@ function printSweets(array) {
        input.setAttribute("type", "number");
        input.setAttribute("id", "count");
        input.setAttribute("value", array[i].count);
+       input.classList.add("usercount");
 
      // Set contents:
        item.appendChild(document.createTextNode(`${array[i].type}`));  
@@ -94,7 +95,7 @@ document.getElementById('sweets').appendChild(printSweets(sweets));
 // Get the input fields that have been changed in the DOM and create an array:
 
 // 1. Selects all the user data from the DOM:
-let domItemContainer = document.getElementsByTagName('input'); 
+let domItemContainer = document.getElementsByClassName('usercount'); 
 //  2. adds the users sweet count input to an array of counts
 let countArray = [ ...domItemContainer]; 
 
@@ -119,15 +120,23 @@ const gift = document.getElementById('gift');
 // SWEET CALCULATOR -------------------------------------------------
 let weightAllSweets = 0;
 let postage = 0;
+let eachWeight = 0;
+let eachCost = 0;
 let costAllSweets = 0;
+
 
 //Loop through and add up all the total costs to the costAllSweets variable
 function allSweetsCost() {
 	 for(var i = 0; i < sweets.length; i++) {
-		let each = countArray[i].value * sweets[i].gCost;
-		costAllSweets += each; 
+	 	console.log(parseInt(costAllSweets));
+	 	eachWeight = countArray[i].value * sweets[i].gWeight;
+		eachCost = parseFloat(eachWeight) * sweets[i].gCost;
+		costAllSweets += parseFloat(eachCost);
+
 	}
+	return(costAllSweets);
 	console.log(`The total sweets cost ${costAllSweets}`);
+	console.log(parseFloat(costAllSweets));
 	message.innerText = `The total sweets cost ${costAllSweets}`;
 };
 
