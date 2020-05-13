@@ -93,8 +93,8 @@ div {
 /* Forms */
 
 input {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 5px;
   border-radius: 5px;
   text-align: center;
@@ -111,6 +111,11 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+input#gift {
+  width: 20px;
+  height: 20px;
 }
 
 
@@ -173,7 +178,7 @@ button:hover {
  }
 
  #sweets {
-    width: 55%;
+    width: 60%;
     height: auto;
     overflow: none; 
     float: right;
@@ -187,17 +192,67 @@ button:hover {
   width: 90%;
 }
 
-button {
+ button {
   font-size: 1.5rem;
 }
 
+/* CSS Grid for Sweet UL */
+.sweetie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+}
 
 
 /**** Styling for desktop ****/ 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1500px) {
+   .container {
+    width: 60%;
+   }
 
+ #sweets {
+    width: 60%;
+  }
 
+div {
+  padding: 15px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+li {
+  text-align: center;
+  width: 150px;
+  height:150px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.sweetImg {
+  width: 100px;
+  height: 100px;
+}
+
+#message {
+  height: 150px;
+
+}
+
+#gift {
+  width: 20px;
+  height: 20px;
+  font-size: 2rem;
+  margin:15px;
+}
+
+input#gift {
+  width: 20px;
+  height: 20px;
+}
 
 
 

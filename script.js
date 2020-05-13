@@ -64,15 +64,19 @@ let sweets = [
 
 
 // Print sweets as ul items to the DOM
+const mq = window.matchMedia( "(min-width: 1500px)" );
+
+
 
 function printSweets(array) {
 	var list = document.createElement('ul');
+	list.classList.add("sweetie");
 
 	for(let i = 0; i < array.length; i++) {
 
     // Create the list item:
        let item = document.createElement('li');
-       item.classList.add("sweetie");
+  
 
 	// Create input item:
        let input = document.createElement("INPUT");
@@ -88,7 +92,13 @@ function printSweets(array) {
 
     // Set contents:
        item.appendChild(img);
+       if(mq.matches) {
+        item.appendChild(document.createElement('br'));
+         }
        item.appendChild(document.createTextNode(` ${array[i].type} `)); 
+        if(mq.matches) {
+        item.appendChild(document.createElement('br'));
+         }
        item.appendChild(input); //Add input field to list item
       
     // Add it to the list:
