@@ -83,11 +83,13 @@ function printSweets(array) {
        input.setAttribute("type", "number");
        input.setAttribute("id", "count");
        input.setAttribute("value", array[i].count);
+       input.setAttribute("label", array[i].type);
        input.classList.add("usercount");
 
     // Create image for item:
         let img = document.createElement('img'); 
         img.src = `${array[i].img}`
+        img.alt = array[i].type;
         img.classList.add("sweetImg");
 
     // Set contents:
