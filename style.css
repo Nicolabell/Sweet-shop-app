@@ -1,7 +1,7 @@
 /* Google fonts */
  @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Hind+Siliguri:wght@500&display=swapp');
 
-/* Global styling */ 
+/**** Global styling for mobile ****/ 
 
 * {
   color: #423232;
@@ -69,12 +69,13 @@ a:active {
 div {
   padding: 10px;
   margin: 5px;
+  margin-top: 20px;
   border-radius: 50px;
   background-color: #f5c7c7;
 }
 
 #sweets {
-    height: 190px;
+    height: 230px;
     overflow: auto;
 }
 
@@ -86,9 +87,6 @@ div {
 
 .sweetie
 
-.alt {
-  background-color: #4444;
-}
 
 /* Sweet images */
 
@@ -131,6 +129,9 @@ li {
 
 /* Buttons */
 
+
+
+
 button {
   color: #fff;
   background-color: #422232;
@@ -143,5 +144,62 @@ button:hover {
   background-color: rgba(252, 252, 222, 0.3);
   color: #422232;
   border: 5px solid;
+}
+
+
+
+/* MEDIA QUERIES */
+
+/**** Styling for tablet ****/ 
+
+@media screen and (min-width: 750px) { 
+ 
+ .container {
+  margin: 0 auto;
+  width: 90%;
+ }
+
+ div {
+  width: 30%;
+  display: inline-block;
+ }
+
+ .visually-hidden {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0
+ }
+
+ #sweets {
+    width: 55%;
+    height: auto;
+    overflow: none; 
+    float: right;
+ }
+
+ #buttons {
+  position: absolute;
+  bottom: 15px;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+
+
+/**** Styling for desktop ****/ 
+
+@media screen and (min-width: 800px) {
+
+
+
+
+
 }
 

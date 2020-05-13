@@ -9,21 +9,26 @@
 
 	<body>
 		<h1>Sweets Calculator</h1>
-	    <div id="calc-message">
-				<p id="message">Add qty of sweets you wish to order and use preview to preview price.</p>
-		</div>
-			<input type="checkbox" id="gift" name="gift" value="gift">
-            <label for="gift"><b>My order is a gift</b></label><br>
-        </div>
-
-		</div>
-		<div id="sweets"></div>
-		<p><b>Scroll for more</b></p>
+		<div class="container" style="background-color: transparent">
+		    <div id="calc-message">
+					<p id="message">Add qty of sweets you wish to order and use preview to preview price.</p>
+					<input type="checkbox" id="gift" name="gift" value="gift">
+	                <label for="gift"><b>My order is a gift</b></label><br>
 		
+				</div>
+
+
+			<div id="sweets"></div>
+			</div>
+			<p class="visually-hidden"><b>Scroll for more</b></p>
+			
+	
+
+		<div style="background-color: transparent" id="buttons">
 			<button id="prev">Preview</button>
 			<button id="confirm">Confirm</button>
 			<button id="reset">Start again</button>	
-		
+		</div>
 
 	</body>
 	<script type="text/javascript" src="script.js"></script>
