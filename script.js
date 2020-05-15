@@ -274,15 +274,25 @@ preview.addEventListener('click', function (event) {
 let messageToLoved;
 
 confirm.addEventListener('click', function (event) {
-	if(gift.checked == true) {
-	  messageToLoved = prompt("Add a message to your loved one");
-    } else {
-	  alert("You've ordered this stuff!");
-    };
+  weightAllSweets = 0;
+  postage = 0;
+  costAllSweets = 0;
+  allSweetsCost();
+  allSweetsWeight();
+  costALL();
+  orderList();
 
-    if(messageToLoved !== null) {
-    alert("You've ordered this stuff!");
+  if(weightAllSweets < 40) {
+    alert("You need to order more than 40g of sweets before completing your order.");
+   } else {
+    if(gift.checked == true) {
+	   messageToLoved = prompt("Add a message to your loved one");
     }
+   alert("You've ordered these items");
+   //Code to submit order data + message data will go here
+
+ }
+ 
 
 });
 
