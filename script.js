@@ -87,10 +87,10 @@ function printSweets(array) {
        input.classList.add("usercount");
 
     // Create image for item:
-        let img = document.createElement('img'); 
-        img.src = `${array[i].img}`
-        img.alt = array[i].type;
-        img.classList.add("sweetImg");
+       let img = document.createElement('img'); 
+       img.src = `${array[i].img}`
+       img.alt = `Picture of ${array[i].type}`;
+       img.classList.add("sweetImg");
 
     // Set contents:
        item.appendChild(img);
@@ -138,6 +138,10 @@ let message = document.getElementById('message');
 // Gift order checkbox:
 
 const gift = document.getElementById('gift');
+
+// Discount code box:
+
+const discount = document.getElementById('discount');
 
 
 
