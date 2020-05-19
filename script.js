@@ -59,14 +59,28 @@ let sweets = [
 ];
 
 
+let activeCodes = [
+  {
+    code: "SWEETS10",
+    percent: 10
+  },
+  {
+    code: "SWEETS20",
+    percent: 20
+  },
+  {
+    code: "20in2020",
+    percent: 20
+  }
+
+];
+
 
 // DOM ELEMENTS -----------------------------------------------------
 
 
 // Print sweets as ul items to the DOM
 const mq = window.matchMedia( "(min-width: 1500px)" );
-
-
 
 function printSweets(array) {
 	var list = document.createElement('ul');
@@ -220,10 +234,10 @@ function costALL() {
   };
 
 
+
 // Store order details:
 //A new array is created to store the order details
 //A copy of the sweets data is made
-
 
 let orderDetails = [];
 let sweetsOrdered = [...sweets];
@@ -233,7 +247,7 @@ let sweetsOrdered = [...sweets];
 
 function orderList() {
 
-  for(var i = 0; i < sweetsOrdered.length; i++){
+  for(var i = 0; i < sweetsOrdered.length; i++) {
    // update sweet count
    let newCount = parseFloat(countArray[i].value);
    sweetsOrdered[i].count = newCount;
@@ -247,7 +261,35 @@ function orderList() {
 
 };
 
+// Discount code function
 
+function discountCode() {
+  let discounted = 0;
+  let discountTrue = false;
+
+activeCodes.forEach((item) => {
+  console.log(item.code);
+   if(discount.value === item.code) {
+    discountTrue = true;
+    discounted = (totalCost/100) * item.percent;
+    totalCost = totalCost - discounted;
+    message.innerHTML +=`<p>Total with ${item.percent}% discount: £${totalCost}</p></b>`;
+    return;
+  };
+    
+});
+
+if (discountTrue) {
+  console.log("Discount code applied");
+    return;
+  } else if(discount.value === "add code here") {
+    return;
+  } else {
+    alert("Sorry - that was not a valid discount code");
+    discount.value = "add code here";
+  }
+  
+};
 
 
 
@@ -264,6 +306,7 @@ preview.addEventListener('click', function (event) {
 	allSweetsCost();
 	allSweetsWeight();
 	costALL();
+  discountCode()
 	orderList();
 
 });
@@ -280,6 +323,7 @@ confirm.addEventListener('click', function (event) {
   allSweetsCost();
   allSweetsWeight();
   costALL();
+  discountCode()
   orderList();
 
   if(weightAllSweets < 40) {
