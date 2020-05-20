@@ -149,6 +149,7 @@ const reset = document.getElementById('reset');
 
 let message = document.getElementById('message');
 
+
 // Gift order checkbox:
 
 const gift = document.getElementById('gift');
@@ -192,7 +193,7 @@ function allSweetsWeight() {
 	 }
 		console.log(`The total order weight is ${weightAllSweets}`);
 		if(weightAllSweets < 40) {
-		message.innerHTML =`<p>Min order weight = 40g. Current weight = ${weightAllSweets}g;  <b>Please add more sweets!</b></p>`;
+		message.textContent =`Min order weight = 40g. Current weight = ${weightAllSweets}g; Please add more sweets!`;
 
 		return weightAllSweets;
 	}
@@ -202,13 +203,13 @@ function allSweetsWeight() {
 function postageCost(cost) {
   	if(cost > 40 && cost <= 250) { 
 		 postage = 1.50;
-		 message.innerHTML =`<p>Sweets: <b>£${costAllSweets}</b>  p&p:  <b>£${postage}</b></p>`;
+		 message.textContent =`Sweets: £${costAllSweets.toFixed(2)}.....p&p: £${postage}`;
 		} else if(cost > 250 && cost <= 500){
 		  postage = 2.00;
-          message.innerHTML =`<p>Sweets: <b>£${costAllSweets}</b>  p&p:  <b>£${postage}</b></p>`
+          message.textContent =`Sweets: £${costAllSweets.toFixed(2)}.....p&p:£${postage}`
       } else if(cost > 500) {
       	postage = 2.50;
-      	message.innerHTML =`<p>Sweets: <b>£${costAllSweets}</b>  p&p:  <b>£${postage}</b></p>`
+      	message.textContent =`Sweets: £${costAllSweets.toFixed(2)}.....p&p: £${postage}`
       }
       else {
       	return;
@@ -227,7 +228,7 @@ function postageCost(cost) {
 function costALL() {
 	totalCost = parseFloat(postage, 16) + parseFloat(costAllSweets, 10);
      if(weightAllSweets > 40) {
-     message.innerHTML +=`<p>Total + p&p: <b>£${totalCost}</p></b>`; //parseflat fixed this
+     message.textContent +=`.....Total + p&p: £${totalCost.toFixed(2)}`; //parseflote fixed this
    } else {
  	   return
      }
@@ -273,7 +274,7 @@ activeCodes.forEach((item) => {
     discountTrue = true;
     discounted = (totalCost/100) * item.percent;
     totalCost = totalCost - discounted;
-    message.innerHTML +=`<p>Total with ${item.percent}% discount: £${totalCost}</p></b>`;
+    message.textContent +=`.....Total with ${item.percent}% discount: £${totalCost.toFixed(2)}`;
     return;
   };
     
@@ -348,7 +349,7 @@ reset.addEventListener('click', function (event) {
 	postage = 0;
 	costAllSweets = 0;
 	gift.checked = false;
-	message.innerHTML = "<p><b>Have another go</b> - add sweets and use preview to calculate!</p>";
+	message.textContent = "Have another go - add sweets and use preview to calculate!";
 	
 	for(var i = 0; i < sweets.length; i++) {
 		countArray[i].value = 0;
