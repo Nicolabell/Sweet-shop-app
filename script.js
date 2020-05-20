@@ -191,9 +191,8 @@ function allSweetsWeight() {
 		let each = countArray[i].value * sweets[i].gWeight;
 		weightAllSweets += each;
 	 }
-		console.log(`The total order weight is ${weightAllSweets}`);
 		if(weightAllSweets < 40) {
-		message.textContent =`Min order weight = 40g. Current weight = ${weightAllSweets}g; Please add more sweets!`;
+		message.textContent =`Min order weight = 40g. Current weight = ${weightAllSweets.toFixed(2)}g; Please add more sweets!`;
 
 		return weightAllSweets;
 	}
@@ -254,7 +253,11 @@ function orderList() {
    sweetsOrdered[i].count = newCount;
    // if order is greater than 0 display to user
    if(sweetsOrdered[i].count > 0) {
+    let sweetObj = {};
    	console.table(sweetsOrdered[i].type, sweetsOrdered[i].count);
+    sweetObj["Sweet"] = sweetsOrdered[i].type;
+    sweetObj["Qty"] = sweetsOrdered[i].count;
+    orderDetails.push(sweetObj);
    };
  
   };
@@ -301,7 +304,8 @@ if (discountTrue) {
 //When preview button is clicked the calculation is made
 
 preview.addEventListener('click', function (event) {
-	weightAllSweets = 0;
+	orderDetails = [];
+  weightAllSweets = 0;
 	postage = 0;
 	costAllSweets = 0;
 	allSweetsCost();
@@ -318,6 +322,7 @@ preview.addEventListener('click', function (event) {
 let messageToLoved;
 
 confirm.addEventListener('click', function (event) {
+  orderDetails = [];
   weightAllSweets = 0;
   postage = 0;
   costAllSweets = 0;
@@ -326,6 +331,9 @@ confirm.addEventListener('click', function (event) {
   costALL();
   discountCode()
   orderList();
+  orderDetails.push({totalCost});
+
+
 
   if(weightAllSweets < 40) {
     alert("You need to order more than 40g of sweets before completing your order.");
@@ -333,8 +341,8 @@ confirm.addEventListener('click', function (event) {
     if(gift.checked == true) {
 	   messageToLoved = prompt("Add a message to your loved one");
     }
-   alert("You've ordered these items");
-   //Code to submit order data + message data will go here
+   alert(`You are ordering ${JSON.stringify(orderDetails, null, 4)}`);
+   //Code to submit order data + message data will go here post proof of concept
 
  }
  
@@ -345,7 +353,8 @@ confirm.addEventListener('click', function (event) {
 // When reset button is clicked everything is cleared
 
 reset.addEventListener('click', function (event) {
-	weightAllSweets = 0;
+	orderDetails = [];
+  weightAllSweets = 0;
 	postage = 0;
 	costAllSweets = 0;
 	gift.checked = false;
