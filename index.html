@@ -5,10 +5,23 @@
 		<title>Online pic and mix shop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="style.css">
+		<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 
+<div class="topnav" id="myTopnav" style="background-color: transparent; padding: 0; margin: 10">
+  <a href="#home" class="active">Shop Pic'n'Mix!</a>
+  <a href="#news">Visit our shop</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About us</a>
+  <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
 	<body>
-		<h1>Pic'n'Mix!</h1>
+		<p></p>
 		<div class="container" style="background-color: transparent; padding: 0; margin: 0">
 		    <div id="calc-message">
 					<p id="message">Add qty of sweets you wish to order and use preview to preview price.</p>
@@ -30,6 +43,20 @@
 			<button id="confirm">Confirm</button>
 			<button id="reset">Start again</button>	
 		</div>
+
+
+
+<script>
+function navFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+</script>
 
 	</body>
 	<footer>

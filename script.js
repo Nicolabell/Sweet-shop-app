@@ -254,7 +254,6 @@ function orderList() {
    // if order is greater than 0 display to user
    if(sweetsOrdered[i].count > 0) {
     let sweetObj = {};
-   	console.table(sweetsOrdered[i].type, sweetsOrdered[i].count);
     sweetObj["Sweet"] = sweetsOrdered[i].type;
     sweetObj["Qty"] = sweetsOrdered[i].count;
     orderDetails.push(sweetObj);
@@ -338,8 +337,9 @@ confirm.addEventListener('click', function (event) {
   if(weightAllSweets < 40) {
     alert("You need to order more than 40g of sweets before completing your order.");
    } else {
-    if(gift.checked == true) {
+    if(gift.checked === true) {
 	   messageToLoved = prompt("Add a message to your loved one");
+     orderDetails.push(messageToLoved);
     }
    alert(`You are ordering ${JSON.stringify(orderDetails, null, 4)}`);
    //Code to submit order data + message data will go here post proof of concept
