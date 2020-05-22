@@ -8,52 +8,52 @@
 let sweets = [
   {
   	type: 'Rhubarb & Custard',
-	gWeight: 2.5,
-	gCost: 0.01,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
+  	gWeight: 2.5,
+  	gCost: 0.01,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Kola Kubes',
-	gWeight: 2.0,
-	gCost: 0.02,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'	
+  	gWeight: 2.0,
+  	gCost: 0.02,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'	
   },
   {
   	type: 'Pear Drops',
-	gWeight: 1.0,
-	gCost: 0.01,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
+  	gWeight: 1.0,
+  	gCost: 0.01,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Chocolate Limes',
-	gWeight: 3.0,
-	gCost: 0.03,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
+  	gWeight: 3.0,
+  	gCost: 0.03,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Aniseed Twists',
   	gWeight: 2.7,
-	gCost: 0.03,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
+  	gCost: 0.03,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
   	type: 'Everton Mints',
   	gWeight: 3.0,
-	gCost: 0.04,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
+  	gCost: 0.04,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   },
   {
-	type: 'Fruit BonBons',
-	gWeight: 2.0,
-	gCost: 0.02,
-	count: 0,
-	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
+  	type: 'Fruit BonBons',
+  	gWeight: 2.0,
+  	gCost: 0.02,
+  	count: 0,
+  	img: 'https://www.permaculture.org.uk/sites/default/files/sweets-image.jpg'
   }
 
 ];
@@ -95,9 +95,13 @@ function printSweets(array) {
 	// Create input item:
        let input = document.createElement("INPUT");
        input.setAttribute("type", "number");
-       input.setAttribute("id", "count");
+       input.setAttribute("id", array[i].type);
        input.setAttribute("value", array[i].count);
-       input.setAttribute("label", array[i].type);
+       let label = document.createElement("LABEL");
+       label.setAttribute("for", array[i].type);
+       let labelTxt = document.createTextNode(`${array[i].type}`);
+       label.appendChild(labelTxt);
+       input.appendChild(label);
        input.classList.add("usercount");
 
     // Create image for item:
