@@ -239,9 +239,9 @@ footer {
 /**** Styling for desktop ****/ 
 
 @media screen and (min-width: 1500px) {
-   .container {
-    width: 60%;
-   }
+  .container {
+  width: 60%;
+  }
 
  #sweets {
     width: 60%;
